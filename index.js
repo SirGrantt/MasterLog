@@ -1,37 +1,10 @@
 import schema from './schema/index';
 
 const express = require('express');
-const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 // const connectDb = require('./db/postgres');
 const db = require('./db/Models/db');
-/*
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Entry {
-    wineName: String
-    producer: String
-    country: String
-    region: String
-    vintage: String
-    varietals: [String]
-    id: ID
-    userId: ID
-    notes: String
-    tags: [String]
-  }
 
-  type Query {
-    getEntries: [Entry]
-  }
-`;
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    getEntries: () => db.Entry.findAll(),
-  },
-};
-*/
 const server = new ApolloServer({
   schema,
   context: ({req}) => ({

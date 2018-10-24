@@ -7,7 +7,7 @@ type Entry {
   region: String
   vintage: String
   varietals: [String]
-  id: ID
+  id: ID!
   userId: ID
   notes: String
   tags: [String]

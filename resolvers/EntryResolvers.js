@@ -1,6 +1,6 @@
 
 const resolvers = {
-  Entry: {
+  RootQuery: {
     getEntries(obj, args, context, info) {
       return context.db.Entry.findAll();
     },
