@@ -3,7 +3,7 @@ import ResponseMessage from '../classes/ResponseMessage';
 
 const resolvers = {
   RootQuery: {
-    getEntries(obj, args, context, info) {
+    entries(obj, args, context, info) {
       return context.db.Entry.findAll();
     },
   },

@@ -4,7 +4,7 @@ import Types from '../types/index';
 
 const RootQuery = `
   type RootQuery {
-    getEntries: [Entry]
+    entries: [Entry]
   }
 `;
 
