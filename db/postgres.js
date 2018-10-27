@@ -23,12 +23,6 @@ function connectDb() {
       logging: console.log,
     })
     .then(() => {
-      userModel.create({
-        username: 'SirGrantt',
-        id: uuid(),
-      });
-    })
-    .then(() => {
       console.log('Connection has been established successfully.');
     })
     .catch(err => console.error('Unable to connect to the database:', err));
