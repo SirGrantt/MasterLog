@@ -6,6 +6,21 @@ const resolvers = {
     entries(obj, args, context, info) {
       return context.db.Entry.findAll();
     },
+    entry(obj, { id }, context, info) {
+      return context.db.Entry.find({
+        where: {
+          id,
+        },
+      }).then(e => e.dataValues).catch(ex => console.log(ex));
+    },
+    userEntries(onj, { userId }, context, info) {
+      return context.db.Entry.findAll({
+        where: {
+          userId,
+        },
+      }).then(e => e)
+        .catch(error => console.log(error));
+    },
   },
   RootMutation: {
     addEntry(obj, args, context, info) {

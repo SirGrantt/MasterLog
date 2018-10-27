@@ -5,6 +5,8 @@ import Types from '../types/index';
 const RootQuery = `
   type RootQuery {
     entries: [Entry]
+    entry(id: ID!): Entry
+    userEntries(userId: ID!): [Entry]
   }
 `;
 
@@ -13,7 +15,7 @@ const RootMutation = `
     addEntry(entry: EntryInput!): ResponseMessage
   }
 `;
-
+// updateEntry(entry: EntryInput!): ResponseMessage
 const SchemaDefinition = `
   schema {
     query: RootQuery,
