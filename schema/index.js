@@ -8,15 +8,22 @@ const RootQuery = `
   }
 `;
 
+const RootMutation = `
+  type RootMutation {
+    addEntry(entry: EntryInput!): ResponseMessage
+  }
+`;
+
 const SchemaDefinition = `
   schema {
-    query: RootQuery
+    query: RootQuery,
+    mutation: RootMutation
   }
 `;
 
 export default makeExecutableSchema({
   typeDefs: [
-    SchemaDefinition, RootQuery, ...Types,
+    SchemaDefinition, RootQuery, RootMutation, ...Types,
   ],
   resolvers,
 });
