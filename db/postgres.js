@@ -1,6 +1,4 @@
-const uuid = require('uuid/v4');
 const Sequelize = require('sequelize');
-const user = require('./Models/User');
 
 function connectDb() {
   const connection = new Sequelize('masterlog', 'pgadmin', 'pgpass', {
@@ -15,8 +13,6 @@ function connectDb() {
     //  idle: 10000
     // },
   });
-
-  const userModel = user(connection, Sequelize);
 
   connection
     .sync({
